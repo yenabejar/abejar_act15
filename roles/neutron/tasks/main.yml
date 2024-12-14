@@ -1,0 +1,13 @@
+ - name: install neutron
+   tags: neutron
+   apt:
+     name:
+       - neutron-server
+       - neutron-13-agent
+       - neutron-plugin-m12
+       - neutron-dhcp-agent
+       - neutron-linuxbridge-agent
+       - python3-neutronclient
+     state: latest
+     update_cache: yes
+   when: ansible_distribution == "Ubuntu"
